@@ -1,40 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
-
-body,
-html {
-  height: calc(100% - 2em);
+*,
+*::after,
+*::before {
   margin: 0;
-  font-family: 'Montserrat';
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  //This defines what 1rem is
+  font-size: 62.5%;
 }
 
 body {
-  background: #1e3c72; /* Old browsers */
-  background: -moz-linear-gradient(
-    45deg,
-    #537895 0%,
-    #09203f 90%
-  ); /* FF3.6-15 */
-  background: -webkit-linear-gradient(
-    45deg,
-    #537895 0%,
-    #09203f 90%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(
-    45deg,
-    #537895 0%,
-    #09203f 90%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#537895', endColorstr='#09203f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  display: grid;
-  grid-template-columns: 20% auto;
-  padding: 2em;
-}
-
-aside {
-  background: #dce1f6;
-  grid-template-columns: auto;
-  grid-template-rows: 20% auto;
-  padding: 0;
+  font-size: 1.6rem;
 }

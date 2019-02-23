@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import './sass/App.scss';
 
-import Avatar from './components/layout/Avatar';
+import Header from './components/layout/Header';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 
@@ -16,11 +16,8 @@ class App extends Component {
     return (
       <Router>
         <div className="container">
-          <aside>
-            <Avatar />
-            <Navbar />
-          </aside>
-
+          <Header />
+          <Navbar />
           <main>
             <Route exact path="/" component={About} />
             <Route exact path="/skills" component={Skills} />
