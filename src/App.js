@@ -1,32 +1,23 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import './sass/App.scss';
 
 import Header from './components/layout/Header';
 import Navbar from './components/layout/Navbar';
+import Content from './components/layout/Content';
 import Footer from './components/layout/Footer';
-
-import About from './components/pages/About';
-import Skills from './components/pages/Skills';
-import Projects from './components/pages/Projects';
 
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div className="container">
-          <Header />
-          <Navbar />
-          <main>
-            <Route exact path="/" component={About} />
-            <Route exact path="/skills" component={Skills} />
-            <Route exact path="/projects" component={Projects} />
-          </main>
-
+      <div className="container">
+        <Header />
+        <Navbar />
+        <div className="grid_body">
+          <Content />
           <Footer />
         </div>
-      </Router>
+      </div>
     );
   }
 }
