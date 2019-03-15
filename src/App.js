@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 
 import Header from './components/layout/Header';
 import About from './components/sections/About';
+import Skills from './components/sections/Skills';
 import Footer from './components/layout/Footer';
 
 const GlobalStyle = createGlobalStyle`
@@ -25,6 +26,17 @@ const GlobalStyle = createGlobalStyle`
     font-family: montserrat, sans-serif;
     font-weight: 400;
   }
+
+  h1 {
+    font-size: 2.5rem;
+    width: fit-content;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid #F15C5C;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
 `;
 
 class App extends Component {
@@ -34,6 +46,7 @@ class App extends Component {
         <GlobalStyle />
         <Header />
         <About />
+        <Skills />
       </React.Fragment>
     );
   }

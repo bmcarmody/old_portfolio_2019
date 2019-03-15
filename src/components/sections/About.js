@@ -1,14 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { Universal__Padding, Section__Padding } from '../mixins';
+
 const AboutContainer = styled.section`
-  padding: 2rem;
+  ${Universal__Padding}
+  ${Section__Padding}
 `;
 
 const About = () => {
   return (
-    <AboutContainer>
-      <h1>About Brandon Carmody</h1>
+    <AboutContainer id="about">
+      <h1>About Me</h1>
       <p>
         I'm a student at Champlain College that will be graduating this year on
         May 3rd with my Bachelors degree in Web Design and Development. I'm an
