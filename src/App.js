@@ -5,6 +5,7 @@ import Header from './components/layout/Header';
 import About from './components/sections/About';
 import Skills from './components/sections/Skills';
 import Projects from './components/sections/Projects';
+import Contact from './components/sections/Contact';
 import Footer from './components/layout/Footer';
 
 const GlobalStyle = createGlobalStyle`
@@ -52,6 +53,7 @@ class App extends Component {
         <About />
         <Skills />
         <Projects />
+        <Contact />
         <Footer />
       </React.Fragment>
     );
