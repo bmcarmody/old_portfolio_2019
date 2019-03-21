@@ -1,9 +1,17 @@
 import React from 'react';
+import styled from 'styled-components';
+
+import { Universal__Padding, Section__Padding } from '../mixins';
+
+const ProjectContainer = styled.section`
+  ${Universal__Padding}
+  ${Section__Padding}
+`;
 
 const Projects = () => {
   return (
-    <div>
-      <h1 className="main__title font_semibold">My Projects</h1>
+    <ProjectContainer>
+      <h1>My Projects</h1>
       <p>
         Lorem ipsum dolor sit amet, ea nec fugit essent officiis. Malorum
         facilisis cum ea, cum ad vitae suscipit, per omnium probatus sapientem
@@ -28,7 +36,7 @@ const Projects = () => {
         diam imperdiet vis no. His at verear euismod. Habeo nominati ocurreret
         has ea. Causae laoreet quo e
       </p>
-    </div>
+    </ProjectContainer>
   );
 };
 

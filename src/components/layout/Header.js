@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Navbar from './Navbar';
 
-import image from '../../programmer.svg';
+import image from '../../img/avatar.svg';
 import { Font__Bold, Universal__Padding } from '../mixins';
 
 const HeaderContainer = styled.header`
@@ -43,6 +43,7 @@ const Goal = styled.p`
   text-align: right;
   width: 60rem;
   font-size: 2.5rem;
+  line-height: 3.5rem;
 `;
 
 const Header = () => {
