@@ -37,6 +37,7 @@ const CenterContent = styled.div`
 
 const Avatar = styled.img`
   padding-left: 8rem;
+  width: 15rem;
 `;
 
 const Goal = styled.p`
