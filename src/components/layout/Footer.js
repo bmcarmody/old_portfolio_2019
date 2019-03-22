@@ -5,10 +5,7 @@ import { Universal__Padding, Section__Padding } from '../mixins';
 const FooterContainer = styled.footer`
   ${Universal__Padding}
   ${Section__Padding}
-  background-color: #f15c5c;
-  position: absolute;
-  width: calc(100% - 24rem);
-  bottom: 0;
+  background-color: rgba(241, 92, 92, 0.8);
   height: 7.5rem;
   color: #ffffff;
 `;
@@ -23,6 +20,10 @@ const FlexItem = styled.div`
     font-size: 1.5rem;
     color: white;
     text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
 
@@ -39,17 +40,13 @@ const Footer = () => {
     <FooterContainer>
       <FlexContainer>
         <FlexItem>
-          <a class="footer__spacing" href="#projects">
-            Project
-          </a>
+          <a href="#projects">Project</a>
           <br />
           <br />
           <a href="#skills">Skills</a>
         </FlexItem>
         <FlexItem>
-          <a class="footer__spacing" href="#contact">
-            Contact
-          </a>
+          <a href="#contact">Contact</a>
           <br />
           <br />
           <a href="https://www.linkedin.com/in/bmcarmody/">LinkedIn</a>

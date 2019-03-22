@@ -10,9 +10,9 @@ const HeaderContainer = styled.header`
   ${Font__Bold}
   ${Universal__Padding}
   height: 35rem;
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1100 540'%3E%3Cdefs%3E%3Cstyle%3E.cls-1{fill:%23d55;}%3C/style%3E%3C/defs%3E%3Ctitle%3EAsset 2%3C/title%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpolygon class='cls-1' points='0 0 1100 0 600 540 0 540 0 0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' opacity='.5' viewBox='0 0 1100 540'%3E%3Cdefs%3E%3Cstyle%3E.cls-1{fill:%23d55;}%3C/style%3E%3C/defs%3E%3Ctitle%3EAsset 2%3C/title%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpolygon class='cls-1' points='0 0 1100 0 600 540 0 540 0 0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-color: #f15c5c;
+  background-color: rgba(241, 92, 92, 0.8);
   color: #ffffff;
   font-size: 2rem;
   position: relative;

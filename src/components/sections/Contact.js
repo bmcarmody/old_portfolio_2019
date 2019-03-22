@@ -6,7 +6,7 @@ import { Universal__Padding, Section__Padding } from '../mixins';
 const ContactContainer = styled.section`
   ${Universal__Padding}
   ${Section__Padding}
-  background-color: #f5f5f5;
+  background-color: rgba(245,245,245, .5);
 `;
 
 const Contact = () => {
