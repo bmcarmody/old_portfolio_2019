@@ -6,6 +6,9 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import eateryImage from '../../img/eatery.png';
+import chatImage from '../../img/chat-app.png';
+import weatherImage from '../../img/weather-map.png';
+import portfolioImage from '../../img/portfolio.png';
 
 import { Universal__Padding, Section__Padding } from '../mixins';
 
@@ -78,6 +81,9 @@ const ProjectContainer = styled.section`
       }
 
       a {
+        display: block;
+        padding: 1rem;
+        line-height: 100%;
         text-decoration: none;
         color: white;
       }
@@ -96,6 +102,21 @@ const ProjectContainer = styled.section`
   .slick-next {
     right: 1% !important;
     z-index: 1;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .slider {
+      .slide__container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 'img' 'info';
+
+        .information__container {
+          h2 {
+            margin-top: 1.5rem;
+          }
+        }
+      }
+    }
   }
 `;
 
@@ -173,7 +194,140 @@ class Projects extends Component {
               <img src={eateryImage} alt="Eatery" />
             </div>
           </div>
-          <div>Test</div>
+
+          <div className="slide__container">
+            <div className="information__container">
+              <h2>Chat App</h2>
+              <p>A chat application made with React and SocketIO</p>
+              <h3>Frontend</h3>
+              <ul>
+                <li>React</li>
+                <li>SCSS</li>
+              </ul>
+
+              <h3>Backend</h3>
+              <ul>
+                <li>Node</li>
+                <li>Express</li>
+                <li>SocketIO</li>
+              </ul>
+
+              <h3>Functionality</h3>
+              <p>
+                Users can pick a username and join any room of their choosing.
+                Users that are in the same chat room are able to talk to each
+                other. If users are in a different chat room, they will not be
+                able to communicate.
+              </p>
+              <div className="buttons">
+                <button className="button--left btn">
+                  <a
+                    href="https://floating-taiga-14329.herokuapp.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Website
+                  </a>
+                </button>
+                <button className="button--right btn">
+                  <a
+                    href="https://github.com/bmcarmody/chat-app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Github
+                  </a>
+                </button>
+              </div>
+              <div className="clear-fix" />
+            </div>
+            <div className="img__container">
+              <img src={chatImage} alt="Eatery" />
+            </div>
+          </div>
+
+          <div className="slide__container">
+            <div className="information__container">
+              <h2>Weather Map</h2>
+              <p>
+                A weather application made with React powered by the Dark Sky
+                and Mapbox API
+              </p>
+              <h3>Frontend</h3>
+              <ul>
+                <li>React</li>
+                <li>SCSS</li>
+              </ul>
+
+              <h3>Functionality</h3>
+              <p>
+                In the search box, type any city that you'd like to see the
+                7-day weather forecast of. The textbox has auto completion for
+                all avialable cities. Upon search, the map will move to the city
+                you selected. The weather for the selected city will be
+                displayed in weekday format.
+              </p>
+              <div className="buttons">
+                <button className="button--left btn">
+                  <a
+                    href="https://bmcarmody.github.io/weather-map/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Website
+                  </a>
+                </button>
+                <button className="button--right btn">
+                  <a
+                    href="https://github.com/bmcarmody/weather-map"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Github
+                  </a>
+                </button>
+              </div>
+              <div className="clear-fix" />
+            </div>
+            <div className="img__container">
+              <img src={weatherImage} alt="Eatery" />
+            </div>
+          </div>
+
+          <div className="slide__container">
+            <div className="information__container">
+              <h2>Portfolio (This site)</h2>
+              <p>A portfolio containing my skills and completed projects.</p>
+              <h3>Frontend</h3>
+              <ul>
+                <li>React</li>
+                <li>Styled-Components</li>
+              </ul>
+
+              <h3>Functionality</h3>
+              <p>
+                This site goes in-depth about my career goals and aspriations.
+                You can find all of my skills and completed projects which also
+                have the associated website and github repo links if you'd like
+                to see the website in action or view the code.
+              </p>
+              <div className="buttons">
+                <button className="button--left btn">
+                  <a
+                    href="https://github.com/bmcarmody/portfolio_v2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Github
+                  </a>
+                </button>
+              </div>
+              <div className="clear-fix" />
+            </div>
+            <div className="img__container">
+              <img src={portfolioImage} alt="Eatery" />
+            </div>
+          </div>
         </Slider>
       </ProjectContainer>
     );

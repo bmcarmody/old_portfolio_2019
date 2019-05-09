@@ -16,6 +16,14 @@ const HeaderContainer = styled.header`
   color: #ffffff;
   font-size: 2rem;
   position: relative;
+
+  @media screen and (max-width: 1024px) {
+    background-image: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Topbar = styled.div`
@@ -38,6 +46,14 @@ const CenterContent = styled.div`
 const Avatar = styled.img`
   padding-left: 8rem;
   width: 15rem;
+
+  @media screen and (max-width: 1024px) {
+    padding: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Goal = styled.p`
@@ -45,6 +61,10 @@ const Goal = styled.p`
   width: 60rem;
   font-size: 2.5rem;
   line-height: 3.5rem;
+
+  @media screen and (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 const Header = () => {

@@ -23,6 +23,10 @@ const FormContainer = styled.form`
       outline: none;
       border: 1px solid rgba(241, 92, 92, 0.8);
     }
+
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+    }
   }
 
   textarea {
@@ -38,6 +42,18 @@ const FormContainer = styled.form`
     &:focus {
       outline: none;
       border: 1px solid rgba(241, 92, 92, 0.8);
+    }
+
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+    }
+  }
+
+  button {
+    padding: 1rem;
+
+    @media screen and (max-width: 1024px) {
+      width: 100%;
     }
   }
 `;
