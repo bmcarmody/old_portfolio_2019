@@ -50,13 +50,14 @@ const Skills = () => {
       <GridContainer>
         <LeftColumn>
           <p>
-            <span>Frontend -</span> React, JavaScript, HTML, CSS/SASS
+            <span>Frontend -</span> React, JavaScript, HTML, CSS{' '}
+            <strong>/</strong> SCSS <strong>/</strong> Styled-Components
           </p>
           <p>
             <span>Backend -</span> NodeJS, Express
           </p>
           <p>
-            <span>Tools -</span> NPM/Yarn, Docker, Git/Github, Webpack, Postman
+            <span>Tools -</span> NPM/Yarn, Git/Github, Webpack, Postman
           </p>
         </LeftColumn>
         <RightColumn>
@@ -65,6 +66,9 @@ const Skills = () => {
           </p>
           <p>
             <span>Databases -</span> MongoDB w/ Mongoose
+          </p>
+          <p>
+            <span>Todo -</span> GraphQL, Docker, Angular
           </p>
         </RightColumn>
       </GridContainer>

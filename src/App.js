@@ -59,6 +59,23 @@ const GlobalStyle = createGlobalStyle`
     transform: scale(1);
     opacity: 1;
   }
+
+  .btn {
+    width: fit-contemnt;
+    padding: 1rem;
+    background-color: rgba(241, 92, 92, 0.8);
+    color: #ffffff;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 4px 4px 8px #888888;
+
+    &:hover {
+      background-color: rgba(241, 92, 92, 1);
+      box-shadow: 8px 8px 8px #888888;
+    }
+  }
 `;
 
 class App extends Component {

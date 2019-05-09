@@ -40,16 +40,6 @@ const FormContainer = styled.form`
       border: 1px solid rgba(241, 92, 92, 0.8);
     }
   }
-
-  button {
-    width: 10rem;
-    height: 3rem;
-    background-color: rgba(241, 92, 92, 0.8);
-    color: #ffffff;
-    border-radius: 0.5rem;
-    font-size: 1.5rem;
-    border: none;
-  }
 `;
 
 const Contact = () => {
@@ -66,7 +56,9 @@ const Contact = () => {
         <textarea type="text" placeholder="Message" />
         <br />
 
-        <button type="submit">Submit</button>
+        <button type="submit" className="btn">
+          Submit
+        </button>
       </FormContainer>
     </ContactContainer>
   );
