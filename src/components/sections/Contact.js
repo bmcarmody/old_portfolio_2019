@@ -49,8 +49,11 @@ const FormContainer = styled.form`
     }
   }
 
-  button {
-    padding: 1rem;
+  .submit {
+    border: none;
+    height: 3.5rem;
+    padding: 0 1rem;
+    width: fit-content;
 
     @media screen and (max-width: 1024px) {
       width: 100%;
@@ -62,7 +65,12 @@ const Contact = () => {
   return (
     <ContactContainer id="contact">
       <h1>Contact</h1>
-      <FormContainer action="POST" data-netlify="true">
+      <FormContainer
+        name="contact"
+        action="POST"
+        data-netlify="true"
+        data-netlify-recaptcha="true"
+      >
         <input type="text" placeholder="Name" name="name" required />
         <br />
 
@@ -71,11 +79,8 @@ const Contact = () => {
 
         <textarea type="text" placeholder="Message" name="text" required />
         <br />
-
-        <button type="submit" className="btn">
-          Submit
-        </button>
         <div data-netlify-recaptcha="true" />
+        <input type="submit" className="submit btn" />
       </FormContainer>
     </ContactContainer>
   );

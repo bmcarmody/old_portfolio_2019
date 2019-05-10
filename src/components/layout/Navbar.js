@@ -108,22 +108,24 @@ const Nav = styled.nav`
 `;
 
 const Navbar = () => {
-  const [clicked, setClicked] = useState();
+  const [clicked, setClicked] = useState(false);
 
   const noScrolling = () => {
     if (clicked === false) {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = 'hidden';
       setClicked(true);
     } else {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = 'auto';
       setClicked(false);
     }
   };
 
   const closeNav = () => {
-    noScrolling();
-    const checkbox = document.querySelector('.navbar__menu--toggle');
-    checkbox.checked = false;
+    if (clicked === true) {
+      noScrolling();
+      const checkbox = document.querySelector('.navbar__menu--toggle');
+      checkbox.checked = false;
+    }
   };
 
   return (

@@ -59,7 +59,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .btn {
-    width: fit-contemnt;
+    width: fit-content;
     background-color: rgba(241, 92, 92, 0.8);
     color: #ffffff;
     border-radius: 0.5rem;
