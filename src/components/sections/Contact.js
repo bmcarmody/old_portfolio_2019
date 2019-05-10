@@ -66,7 +66,7 @@ const Contact = () => {
       <h1>Contact</h1>
       <form
         name="contact"
-        action="POST"
+        method="POST"
         data-netlify="true"
         data-netlify-recaptcha="true"
       >
