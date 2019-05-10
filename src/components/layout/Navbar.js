@@ -1,55 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
+  position: relative;
   a {
     text-decoration: none;
     color: #ffffff;
     padding-left: 5rem;
   }
-`;
 
-const NavExtended = styled.div`
-  font-size: 3rem !important;
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-  @media screen and (min-width: 769px) {
-    display: block;
-  }
-`;
-
-const NavMenu = styled.div`
   .navbar {
     &__menu {
-      & > &--toggle:checked ~ label > &__icon {
-        background: white;
-        height: 0;
-        &:before {
-          top: 0;
-          transform: rotate(135deg);
-          transition: all 0.2s ease;
+      &--toggle:checked ~ .navbar__links {
+        display: block;
+        z-index: 5;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 106, 106, 0.9);
+        display: grid;
+        justify-items: center;
+        align-items: start;
+        padding-top: 6rem;
+        font-size: 3rem;
+      }
+
+      &--toggle:checked ~ label > .navbar__menu__icon {
+        height: 0px;
+
+        &::before {
+          transform: rotate(45deg);
+          top: 0rem;
         }
 
-        &:after {
-          top: 0;
-          transform: rotate(-135deg);
-          transition: all 0.2s ease;
+        &::after {
+          transform: rotate(-45deg);
+          top: 0rem;
         }
       }
+
       &--toggle {
-        position: absolute;
-        visibility: hidden;
-
-        &:checked ~ .navbar__menu__container {
-          visibility: visible;
-          transform: scale(1);
-          transition: all 0.2s ease;
-        }
-      }
-
-      label {
-        position: relative;
+        display: none;
       }
 
       &__icon {
@@ -78,82 +71,88 @@ const NavMenu = styled.div`
         &--wrapper {
           cursor: pointer;
           z-index: 15;
-          top: -1rem;
+          bottom: -1rem;
           position: absolute;
           width: 2.25rem;
           height: 2rem;
         }
       }
+    }
+  }
 
-      &__container {
-        visibility: hidden;
-        position: absolute;
-        z-index: 5;
-        top: 0;
-        right: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(241, 92, 92, 0.8);
-        transform: scale(0);
-        transition: all 0.2s ease;
-        display: grid;
-        justify-items: center;
-        align-items: start;
-        grid-row-gap: 0.5rem;
-        padding-top: 10rem;
-        transform-origin: top;
+  @media screen and (max-width: 830px) {
+    .navbar {
+      &__links {
+        display: none;
+      }
 
-        .navbar__link {
-          color: white;
-          font-size: 6rem;
-        }
+      &__menu__icon,
+      &__menu__icon--wrapper {
+        display: block;
       }
     }
   }
 
-  @media screen and (max-width: 768px) {
-    display: block;
-  }
-  @media screen and (min-width: 769px) {
-    display: none;
+  @media screen and (min-width: 831px) {
+    .navbar {
+      &__links {
+        display: block;
+      }
+
+      &__menu__icon,
+      &__menu__icon--wrapper {
+        display: none;
+      }
+    }
   }
 `;
 
 const Navbar = () => {
+  const [clicked, setClicked] = useState();
+
+  const noScrolling = () => {
+    if (clicked === false) {
+      document.body.style.overflow = 'auto';
+      setClicked(true);
+    } else {
+      document.body.style.overflow = 'hidden';
+      setClicked(false);
+    }
+  };
+
+  const closeNav = () => {
+    noScrolling();
+    const checkbox = document.querySelector('.navbar__menu--toggle');
+    checkbox.checked = false;
+  };
+
   return (
     <Nav>
-      <NavExtended>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </NavExtended>
-      <NavMenu>
-        <input
-          type="checkbox"
-          id="navbar__menu--toggle"
-          className="navbar__menu--toggle"
-        />
-        <label htmlFor="navbar__menu--toggle">
-          <div className="navbar__menu__icon--wrapper" />
-          <div className="navbar__menu__icon" />
-        </label>
+      <input
+        type="checkbox"
+        id="navbar__menu--toggle"
+        className="navbar__menu--toggle"
+        onClick={noScrolling}
+      />
+      <label htmlFor="navbar__menu--toggle">
+        <div className="navbar__menu__icon--wrapper" />
+        <div className="navbar__menu__icon" />
+      </label>
 
-        <div className="navbar__menu__container">
-          <a href="#about" className="navbar__link">
-            About
-          </a>
-          <a href="#skills" className="navbar__link">
-            Skills
-          </a>
-          <a href="#projects" className="navbar__link">
-            Projects
-          </a>
-          <a href="#contact" className="navbar__link">
-            Contact
-          </a>
-        </div>
-      </NavMenu>
+      <div className="navbar__links">
+        <a href="#about" onClick={closeNav}>
+          About
+        </a>
+        <a href="#skills" onClick={closeNav}>
+          Skills
+        </a>
+        <a href="#projects" onClick={closeNav}>
+          Projects
+        </a>
+        <a href="#contact" onClick={closeNav}>
+          Contact
+        </a>
+      </div>
     </Nav>
   );
 };

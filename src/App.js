@@ -53,7 +53,6 @@ const GlobalStyle = createGlobalStyle`
 
   .particles__canvas {
     display: block;
-    vertical-align: bottom;
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1);
@@ -85,7 +84,7 @@ class App extends Component {
           params={{
             particles: {
               number: {
-                value: 50
+                value: 25
               },
               size: {
                 value: 4

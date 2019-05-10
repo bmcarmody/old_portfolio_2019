@@ -60,7 +60,7 @@ const FormContainer = styled.form`
 
 const Contact = () => {
   return (
-    <ContactContainer>
+    <ContactContainer id="contact">
       <h1>Contact</h1>
       <FormContainer>
         <input type="text" placeholder="Name" />

@@ -15,8 +15,8 @@ const SkillsContainer = styled.section`
 
 const GridContainer = styled.div`
   display: grid;
-  grid-template-columms: 2fr 3fr;
-  grid-template-areas 'left right';
+  grid-template-columns: 2fr 2fr;
+  grid-template-areas: 'left right';
 `;
 
 const LeftColumn = styled.div`
@@ -45,7 +45,7 @@ const RightColumn = styled.div`
 
 const Skills = () => {
   return (
-    <SkillsContainer>
+    <SkillsContainer id="skills">
       <h1>Skills</h1>
       <GridContainer>
         <LeftColumn>

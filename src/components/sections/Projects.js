@@ -133,7 +133,7 @@ class Projects extends Component {
     };
 
     return (
-      <ProjectContainer>
+      <ProjectContainer id="projects">
         <h1>Projects</h1>
         <Slider {...settings}>
           <div className="slide__container">

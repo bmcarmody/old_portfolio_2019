@@ -17,11 +17,11 @@ const HeaderContainer = styled.header`
   font-size: 2rem;
   position: relative;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1300px) {
     background-image: none;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 940px) {
     font-size: 1.5rem;
   }
 `;
@@ -32,6 +32,7 @@ const Topbar = styled.div`
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #ffffff;
+  position: relative;
 `;
 
 const Title = styled.div``;
