@@ -64,7 +64,7 @@ const Contact = () => {
   return (
     <ContactContainer id="contact">
       <h1>Contact</h1>
-      <form name="contact" method="POST">
+      <form name="contact" data-netlify="true" method="POST">
         <input type="hidden" name="form-name" value="contact" />
         <input type="text" placeholder="Name" name="name" required />
         <br />
