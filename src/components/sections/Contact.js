@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import NetlifyForm from 'react-netlify-form';
+
 import { Universal__Padding, Section__Padding } from '../mixins';
 
 const ContactContainer = styled.section`
@@ -64,16 +66,34 @@ const Contact = () => {
   return (
     <ContactContainer id="contact">
       <h1>Contact</h1>
-      <form name="contact" method="POST">
-        <input type="hidden" name="form-name" value="contact" />
-        <input type="text" placeholder="Name" name="name" required />
-        <br />
-        <input type="email" placeholder="Email" name="email" required />
-        <br />
-        <textarea type="text" placeholder="Message" name="text" required />
-        <br />
-        <input type="submit" className="submit btn" />
-      </form>
+      <NetlifyForm name="Contact Form">
+        {({ loading, error, success }) => (
+          <div>
+            {loading && <div>Loading...</div>}
+            {error && (
+              <div>Your information was not sent. Please try again later.</div>
+            )}
+            {success && <div>Thank you for contacting us!</div>}
+            {!loading && !success && (
+              <React.Fragment>
+                <input type="hidden" name="form-name" value="contact" />
+                <input type="text" placeholder="Name" name="name" required />
+                <br />
+                <input type="email" placeholder="Email" name="email" required />
+                <br />
+                <textarea
+                  type="text"
+                  placeholder="Message"
+                  name="text"
+                  required
+                />
+                <br />
+                <input type="submit" className="submit btn" />
+              </React.Fragment>
+            )}
+          </div>
+        )}
+      </NetlifyForm>
     </ContactContainer>
   );
 };
