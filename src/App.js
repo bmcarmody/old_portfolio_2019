@@ -24,7 +24,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    @import url('https://use.typekit.net/sia8flr.css');
 
     font-family: montserrat, sans-serif;
     font-weight: 400;
