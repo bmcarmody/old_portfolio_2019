@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { Universal__Padding, Section__Padding } from '../mixins';
@@ -49,10 +49,7 @@ const ContactContainer = styled.section`
     }
 
     .submit {
-      border: none;
-      height: 3.5rem;
-      padding: 0 1rem;
-      width: fit-content;
+      padding: 1rem;
 
       @media screen and (max-width: 1024px) {
         width: 100%;
@@ -61,29 +58,57 @@ const ContactContainer = styled.section`
   }
 `;
 const Contact = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
+  };
+
+  const onSubmit = e => {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', name, email, message })
+    })
+      .then(() => alert('Success!'))
+      .catch(error => alert(error));
+
+    e.preventDefault();
+  };
+
   return (
     <ContactContainer id="contact">
       <h1>Contact</h1>
-      <form name="contact" method="post">
+      <form name="contact" method="post" onSubmit={onSubmit}>
         <input type="hidden" name="form-name" value="contact" />
-        <p>
-          <label>
-            Your Name: <input type="text" name="name" />
-          </label>
-        </p>
-        <p>
-          <label>
-            Your Email: <input type="email" name="email" />
-          </label>
-        </p>
-        <p>
-          <label>
-            Message: <textarea name="message" />
-          </label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          onChange={e => setName(e.target.value)}
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          onChange={e => setEmail(e.target.value)}
+          required
+        />
+        <textarea
+          name="message"
+          placeholder="Message"
+          required
+          onChange={e => setMessage(e.target.value)}
+        />{' '}
+        <br />
+        <button type="submit" className="btn submit">
+          Submit
+        </button>
       </form>
     </ContactContainer>
   );
