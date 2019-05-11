@@ -68,16 +68,18 @@ const Contact = () => {
       .join('&');
   };
 
+  let formData = {
+    'form-name': 'contactForm',
+    name,
+    email,
+    message
+  };
+
   const onSubmit = e => {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'form-name': 'contact',
-        'name': name, //prettier-ignore
-        'email': email, //prettier-ignore
-        'message': message //prettier-ignore
-      })
+      body: encode(formData)
     })
       .then(() => alert('Success!'))
       .catch(error => alert(error));
@@ -88,7 +90,8 @@ const Contact = () => {
   return (
     <ContactContainer id="contact">
       <h1>Contact</h1>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} name="contactForm">
+        <input type="hidden" name="form-name" />
         <input
           type="text"
           name="name"
