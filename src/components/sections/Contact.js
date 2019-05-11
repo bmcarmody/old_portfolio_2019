@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import NetlifyForm from 'react-netlify-form';
-
 import { Universal__Padding, Section__Padding } from '../mixins';
 
 const ContactContainer = styled.section`
@@ -66,34 +64,21 @@ const Contact = () => {
   return (
     <ContactContainer id="contact">
       <h1>Contact</h1>
-      <NetlifyForm name="Contact Form">
-        {({ loading, error, success }) => (
-          <div>
-            {loading && <div>Loading...</div>}
-            {error && (
-              <div>Your information was not sent. Please try again later.</div>
-            )}
-            {success && <div>Thank you for contacting us!</div>}
-            {!loading && !success && (
-              <React.Fragment>
-                <input type="hidden" name="form-name" value="contact" />
-                <input type="text" placeholder="Name" name="name" required />
-                <br />
-                <input type="email" placeholder="Email" name="email" required />
-                <br />
-                <textarea
-                  type="text"
-                  placeholder="Message"
-                  name="text"
-                  required
-                />
-                <br />
-                <input type="submit" className="submit btn" />
-              </React.Fragment>
-            )}
-          </div>
-        )}
-      </NetlifyForm>
+      <form name="contact" method="post">
+          <input type="hidden" name="form-name" value="contact" />
+          <p>
+            <label>Your Name: <input type="text" name="name"/></label>
+          </p>
+          <p>
+            <label>Your Email: <input type="email" name="email"/></label>
+          </p>
+          <p>
+            <label>Message: <textarea name="message"></textarea></label>
+          </p>
+          <p>
+            <button type="submit">Send</button>
+          </p>
+        </form>
     </ContactContainer>
   );
 };
