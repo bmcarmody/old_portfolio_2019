@@ -262,8 +262,8 @@ class Projects extends Component {
               <h3>Functionality</h3>
               <p>
                 In the search box, type any city that you'd like to see the
-                7-day weather forecast of. The textbox has auto completion for
-                all avialable cities. Upon search, the map will move to the city
+                7-day weather forecast of. The textbox has auto-completion for
+                all available cities. Upon search, the map will move to the city
                 you selected. The weather for the selected city will be
                 displayed in weekday format.
               </p>
