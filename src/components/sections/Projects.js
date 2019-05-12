@@ -306,9 +306,9 @@ class Projects extends Component {
 
               <h3>Functionality</h3>
               <p>
-                This site goes in-depth about my career goals and aspriations.
+                This site goes in-depth about my career goals and aspirations.
                 You can find all of my skills and completed projects which also
-                have the associated website and github repo links if you'd like
+                have the associated website and GitHub repo links if you'd like
                 to see the website in action or view the code.
               </p>
               <div className="buttons">
