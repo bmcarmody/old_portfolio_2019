@@ -63,6 +63,11 @@ const Contact = () => {
       <h1>Contact</h1>
       <form name="contactMe" method="post">
         <input type="hidden" name="form-name" value="contactMe" />
+        <p hidden>
+          <label>
+            Don’t fill this out: <input name="bot-field" />
+          </label>
+        </p>
         <input type="text" name="name" placeholder="Name" required />
         <input type="email" name="email" placeholder="Email" required />
         <textarea name="message" placeholder="Message" required /> <br />
