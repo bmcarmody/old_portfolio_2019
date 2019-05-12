@@ -91,7 +91,7 @@ const Contact = () => {
     <ContactContainer id="contact">
       <h1>Contact</h1>
       <form onSubmit={onSubmit} name="contactForm">
-        <input type="hidden" name="form-name" />
+        <input type="hidden" name="form-name" value="contactForm" />
         <input
           type="text"
           name="name"
