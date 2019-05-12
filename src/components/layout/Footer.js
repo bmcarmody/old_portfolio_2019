@@ -49,10 +49,22 @@ const Footer = () => {
           <a href="#contact">Contact</a>
           <br />
           <br />
-          <a href="https://www.linkedin.com/in/bmcarmody/">LinkedIn</a>
+          <a
+            href="https://www.linkedin.com/in/bmcarmody/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
         </FlexItem>
         <FlexItem>
-          <a href="https://github.com/bmcarmody">Github</a>
+          <a
+            href="https://github.com/bmcarmody"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Github
+          </a>
         </FlexItem>
       </FlexContainer>
       <Copyright>

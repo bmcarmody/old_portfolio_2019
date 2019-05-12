@@ -8,65 +8,27 @@ const ContactContainer = styled.section`
   ${Section__Padding}
   background-color: rgba(245,245,245, .5);
 
-  form {
-    input {
-      width: 50%;
-      height: 3rem;
-      padding-left: 1rem;
-      border-radius: 0.5rem;
-      border: 1px solid #808080;
-      font-size: 1.5rem;
-      margin-bottom: 2.5rem;
-
-      &:focus {
-        outline: none;
-        border: 1px solid rgba(241, 92, 92, 0.8);
-      }
-
-      @media screen and (max-width: 1024px) {
-        width: 100%;
-      }
-    }
-
-    textarea {
-      width: 50%;
-      height: 12.5rem;
-      padding-top: 1rem;
-      padding-left: 1rem;
-      border-radius: 0.5rem;
-      border: 1px solid #808080;
-      font-size: 1.5rem;
-      margin-bottom: 2.5rem;
-
-      &:focus {
-        outline: none;
-        border: 1px solid rgba(241, 92, 92, 0.8);
-      }
-
-      @media screen and (max-width: 1024px) {
-        width: 100%;
-      }
-    }
-
-    .submit {
-      padding: 1rem;
-
-      @media screen and (max-width: 1024px) {
-        width: 100%;
-      }
-    }
+  a {
+    color: black;
+    font-weight: bold;
   }
 `;
 const Contact = () => {
   return (
     <ContactContainer id="contact">
       <h1>Contact</h1>
-      <form name="contactMe" method="post">
-        <input type="text" name="name" placeholder="Name" required />
-        <button type="submit" className="btn submit">
-          Submit
-        </button>
-      </form>
+      <p>
+        If you would like to get into contact with me, please reach out via my{' '}
+        <a
+          href="https://www.linkedin.com/in/bmcarmody/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>{' '}
+        page and I will get back to you as soon as I can. <br /> <br />
+        Thank you.
+      </p>
     </ContactContainer>
   );
 };
