@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import { Universal__Padding, Section__Padding } from '../mixins';
@@ -58,61 +58,14 @@ const ContactContainer = styled.section`
   }
 `;
 const Contact = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-
-  const encode = data => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-      .join('&');
-  };
-
-  let formData = {
-    'form-name': 'contactForm',
-    name,
-    email,
-    message
-  };
-
-  const onSubmit = e => {
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode(formData)
-    })
-      .then(() => alert('Success!'))
-      .catch(error => alert(error));
-
-    e.preventDefault();
-  };
-
   return (
     <ContactContainer id="contact">
       <h1>Contact</h1>
-      <form onSubmit={onSubmit} name="contactForm">
+      <form name="contactForm" method="post">
         <input type="hidden" name="form-name" value="contactForm" />
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          onChange={e => setName(e.target.value)}
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          onChange={e => setEmail(e.target.value)}
-          required
-        />
-        <textarea
-          name="message"
-          placeholder="Message"
-          required
-          onChange={e => setMessage(e.target.value)}
-        />{' '}
-        <br />
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <textarea name="message" placeholder="Message" required /> <br />
         <button type="submit" className="btn submit">
           Submit
         </button>
